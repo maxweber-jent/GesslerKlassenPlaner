@@ -1,19 +1,28 @@
 version: "3.8"
 
 services:
-  web:
+
+  php:
     image: php:8.2-apache
+    container_name: gessler_php
+    volumes:
+      - ./src:/var/www/html
     ports:
       - "8080:80"
-    volumes:
-      - ./public:/var/www/html
     depends_on:
-      - db
+      - 
 
   db:
     image: mysql:8.0
+    container_name: schulverwaltung_db
+    restart: always
     environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: schulverwaltung
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
     ports:
       - "3306:3306"
+    volumes:
+      - ./src/database:/docker-entrypoint-initdb.d
+    command: --default-authentication-plugin=mysql_native_password
