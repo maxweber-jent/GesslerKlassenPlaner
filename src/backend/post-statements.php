@@ -4,12 +4,12 @@ function postStatements() {
   // make PDO connection available from db.php
   global $pdo;
 
-  $type = isset($_POST['type']) ? htmlspecialchars($_POST['type']) : '';
-  $class_id = isset($_POST['klasse_id']) ? htmlspecialchars($_POST['klasse_id']) : '';
-  $subject = isset($_POST['fach']) ? htmlspecialchars($_POST['fach']) : '';
-  $name = isset($_POST['vorname']) ? htmlspecialchars($_POST['vorname']) : '';
-  $lastname = isset($_POST['nachname']) ? htmlspecialchars($_POST['nachname']) : '';
-  $bday = isset($_POST['geb']) ? htmlspecialchars($_POST['geb']) : '';
+  $type = isset($_POST['type']) ? htmlspecialchars($_POST['type']) : null;
+  $class_id = isset($_POST['klasse_id']) ? htmlspecialchars($_POST['klasse_id']) : null;
+  $subject = isset($_POST['fach']) ? htmlspecialchars($_POST['fach']) : null;
+  $name = isset($_POST['vorname']) ? htmlspecialchars($_POST['vorname']) : null;
+  $lastname = isset($_POST['nachname']) ? htmlspecialchars($_POST['nachname']) : null;
+  $bday = isset($_POST['geb']) ? htmlspecialchars($_POST['geb']) : null;
 
   switch ($type) {
     case 'addStudent': {
