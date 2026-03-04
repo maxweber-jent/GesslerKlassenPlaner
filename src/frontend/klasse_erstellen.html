@@ -6,5 +6,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Klasse erstellen</h1>
+    <form method="post" action="../backend/main.php">
+        <input type="hidden" name="type" value="addClass">
+        <div>
+            <label for="bezeichnung">Bezeichnung:</label>
+            <input type="text" id="bezeichnung" name="bezeichnung" required>
+        </div>
+        <div>
+            <label for="schuljahr">Schuljahr:</label>
+            <input type="text" id="schuljahr" name="schuljahr" placeholder="z.B. 2025/2026">
+        </div>
+        <button type="submit">Erstellen</button>
+    </form>
 </body>
 </html>
