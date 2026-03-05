@@ -2,22 +2,27 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klasse erstellen</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Klasse erstellen</h1>
-    <form method="post" action="../backend/main.php">
-        <input type="hidden" name="type" value="addClass">
-        <div>
-            <label for="bezeichnung">Bezeichnung:</label>
-            <input type="text" id="bezeichnung" name="bezeichnung" required>
-        </div>
-        <div>
-            <label for="schuljahr">Schuljahr:</label>
-            <input type="text" id="schuljahr" name="schuljahr" placeholder="z.B. 2025/2026">
-        </div>
-        <button type="submit">Erstellen</button>
-    </form>
+    <div class="container">
+        <h1>Klasse erstellen</h1>
+        <form method="post" action="../backend/main.php">
+            <input type="hidden" name="type" value="addClass">
+            <div>
+                <label for="bezeichnung">Bezeichnung:</label>
+                <input type="text" id="bezeichnung" name="bezeichnung" placeholder="z.B. 10a" required>
+            </div>
+            <div>
+                <label for="schuljahr">Schuljahr:</label>
+                <input type="text" id="schuljahr" name="schuljahr" placeholder="z.B. 2025/2026">
+            </div>
+            <button type="submit">Erstellen</button>
+            <br>
+            <button type="button" onclick="window.location.href='./Startseite.html'" style="margin-top: 2%;">Zurück</button>
+        </form>
+    </div>
 </body>
 </html>
