@@ -15,26 +15,7 @@
     $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8;";
     $pdo = new PDO($dsn, $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-    $statement = "";
-
-    $ergebnis = $pdo->query($statement);
-
-    $schueler = $ergebnis->fetchALL(PDO::FETCH_ASSOC);
-
-
-    // Je nach Anfrage rückgabe unterschiedlicher ausgaben
-
-  //   foreach($schueler as $s):
-  //     echo "<tr>";
-  //       echo "<td>" . htmlspecialchars($s['ID']) . "</td>";
-  //       echo "<td>" . htmlspecialchars($s['nachname']) . "</td>";
-  //       echo "<td>" . htmlspecialchars($s['vorname']) . "</td>";
-  //       echo "<td>" . htmlspecialchars($s['klasse']) . "</td>";
-  //       echo "<td>" . htmlspecialchars($s['AG']) . "</td>";
-  //     echo "</tr>";
-  //   endforeach;
+    
   } 
   
   catch(PDOEXCEPTION $e){

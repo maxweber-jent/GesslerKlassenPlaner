@@ -14,11 +14,18 @@ function postStatements() {
   switch ($type) {
     case 'addStudent': {
       // insert a new student record
-      if ($name && $lastname && $bday && $class_id) {
+      $fields = [$name, $lastname, $bday, $class_id];
+      $check = $pdo->prepare(
+        "SELECT * FROM schueler WHERE vorname = ? and nachname = ? and geburtsdatum = ? and klasse_id = ?"
+      );
+      $check->execute($fields);
+      $exists = $check->fetchAll(PDO::FETCH_ASSOC);
+
+      if ($name && $lastname && $bday && $class_id && !$exists) {
         $stmt = $pdo->prepare(
           "INSERT INTO schueler (vorname, nachname, geburtsdatum, klasse_id) VALUES (?, ?, ?, ?)"
         );
-        $stmt->execute([$name, $lastname, $bday, $class_id]);
+        $stmt->execute($fields);
       }
       break;
     }
@@ -29,6 +36,8 @@ function postStatements() {
       if ($sid) {
         $stmt = $pdo->prepare("DELETE FROM schueler WHERE schueler_id = ?");
         $stmt->execute([$sid]);
+      } else {
+        echo "<p> Schüler existiert nicht </p>";
       }
       break;
     }
@@ -62,7 +71,7 @@ function postStatements() {
     }
 
     default: {
-      // unknown action
+      echo "<p>Fehler, bitte prüfe die Eingabe<p>";
       break;
     }
   }
