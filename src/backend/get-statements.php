@@ -29,45 +29,45 @@
       }
       case 'gradesPerStudent': {
   
-      echo "<p>$vorname $nachname</p>"; 
-      echo "<table>";
-        echo "<tr>";
-          echo "<td> Fach </td>";
-          echo "<td> Note </td>";
-        echo "</tr>";
+        echo "<p>$vorname $nachname</p>"; 
+        echo "<table>";
+          echo "<tr>";
+            echo "<td> Fach </td>";
+            echo "<td> Note </td>";
+          echo "</tr>";
 
-      foreach ($res as $r) {
-        echo "<tr>";
-          echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
-          echo "<td>" . htmlspecialchars($r['note']) . "</td>";
-        echo "</tr>";
-        
-      }
-            
-      echo "</table>";
+        foreach ($res as $r) {
+          echo "<tr>";
+            echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
+            echo "<td>" . htmlspecialchars($r['note']) . "</td>";
+          echo "</tr>";
+          
+        }
+              
+        echo "</table>";
       break;
       }
 
       case 'gradesPerSubject': {
       
-      echo "<p>Klassenübersicht</p>"; 
-      echo "<table>";
-        echo "<tr>";
-          echo "<td> Klasse </td>";
-          echo "<td> Fach </td>";
-          echo "<td> Note </td>";
-        echo "</tr>";
+        echo "<p>Klassenübersicht</p>"; 
+        echo "<table>";
+          echo "<tr>";
+            echo "<td> Klasse </td>";
+            echo "<td> Fach </td>";
+            echo "<td> Note </td>";
+          echo "</tr>";
 
-      foreach ($res as $r) {
-        echo "<tr>";
-          echo "<td>" . htmlspecialchars($r['klasse_id']) . "</td>";
-          echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
-          echo "<td>" . htmlspecialchars($r['note']) . "</td>";
-        echo "</tr>";
-        
-      }
-            
-      echo "</table>";
+        foreach ($res as $r) {
+          echo "<tr>";
+            echo "<td>" . htmlspecialchars($r['klasse_id']) . "</td>";
+            echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
+            echo "<td>" . htmlspecialchars($r['note']) . "</td>";
+          echo "</tr>";
+          
+        }
+              
+        echo "</table>";
       break;
 
       
@@ -75,22 +75,22 @@
       }
       case 'gradesPerClass': {
 
-      echo "<p>Notenübersicht</p>"; 
-      echo "<table>";
-        echo "<tr>";
-          echo "<td> Fach </td>";
-          echo "<td> Note </td>";
-        echo "</tr>";
+        echo "<p>Notenübersicht</p>"; 
+        echo "<table>";
+          echo "<tr>";
+            echo "<td> Fach </td>";
+            echo "<td> Note </td>";
+          echo "</tr>";
 
-      foreach ($res as $r) {
-        echo "<tr>";
-          echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
-          echo "<td>" . htmlspecialchars($r['note']) . "</td>";
-        echo "</tr>";
-        
-      }
-            
-      echo "</table>";
+        foreach ($res as $r) {
+          echo "<tr>";
+            echo "<td>" . htmlspecialchars($r['fach']) . "</td>";
+            echo "<td>" . htmlspecialchars($r['note']) . "</td>";
+          echo "</tr>";
+          
+        }
+              
+        echo "</table>";
       break;
 
       }
