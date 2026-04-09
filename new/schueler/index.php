@@ -20,4 +20,3 @@ $schuelrList = [
 
 include dirname(__FILE__) . '/index.view.php';
 ?>
-
