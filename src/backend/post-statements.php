@@ -30,6 +30,27 @@ function postStatements() {
       break;
     }
 
+    case 'addClass': {
+      $bezeichnung = isset($_POST['bezeichnung']) ? htmlspecialchars($_POST['bezeichnung']) : null;
+      $schuljahr = isset($_POST['schuljahr']) ? htmlspecialchars($_POST['schuljahr']) : null;
+
+      if ($bezeichnung && $schuljahr) {
+        $check = $pdo->prepare(
+          "SELECT * FROM klasse WHERE bezeichnung = ? AND schuljahr = ?"
+        );
+        $check->execute([$bezeichnung, $schuljahr]);
+        $exists = $check->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!$exists) {
+          $stmt = $pdo->prepare(
+            "INSERT INTO klasse (bezeichnung, schuljahr) VALUES (?, ?)"
+          );
+          $stmt->execute([$bezeichnung, $schuljahr]);
+        }
+      }
+      break;
+    }
+
     case 'removeStudent': {
       // expects schueler_id in POST data
       $sid = isset($_POST['schueler_id']) ? intval($_POST['schueler_id']) : 0;

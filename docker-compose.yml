@@ -3,10 +3,10 @@ version: "3.8"
 services:
 
   php:
-    image: php:8.2-apache
+    build: .
     container_name: gessler_php
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
     ports:
       - "8080:80"
     depends_on:

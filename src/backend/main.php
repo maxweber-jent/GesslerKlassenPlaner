@@ -2,7 +2,7 @@
 
 include('db.php');
 include('post-statements.php');
-include('get-statements');
+include('get-statements.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
