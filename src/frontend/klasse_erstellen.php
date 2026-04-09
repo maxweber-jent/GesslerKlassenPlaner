@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasse erstellen</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../../new/layout/html_top.php';
+?> 
+
+
     <div class="container">
         <h1>Klasse erstellen</h1>
         <form method="post" action="../backend/main.php">
@@ -24,5 +20,8 @@
             <button type="button" onclick="window.location.href='./Startseite.html'" style="margin-top: 2%;">Zurück</button>
         </form>
     </div>
-</body>
-</html>
+
+    
+<?php
+require_once __DIR__ . '/../../new/layout/html_bottom.php';
+?>

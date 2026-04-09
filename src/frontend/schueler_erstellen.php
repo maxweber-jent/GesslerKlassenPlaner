@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schüler erstellen</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../../new/layout/html_top.php';
+?>
+
+
+
     <div class="container">
         <h1>Schüler erstellen</h1>
         <form method="post" action="../backend/main.php">
@@ -62,5 +59,9 @@
         // Load classes when page loads
         document.addEventListener('DOMContentLoaded', loadClasses);
     </script>
-</body>
-</html>
+
+
+
+<?php
+require_once __DIR__ . '/../../new/layout/html_bottom.php';
+?>
