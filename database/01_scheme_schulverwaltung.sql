@@ -12,7 +12,7 @@ CREATE TABLE klasse (
     bezeichnung VARCHAR(20) NOT NULL,
     schuljahr VARCHAR(9),
     CONSTRAINT uq_klasse UNIQUE (bezeichnung, schuljahr)
-) 
+);
 
 -- ========================
 -- Tabelle: fach (Stammdaten)
@@ -21,7 +21,7 @@ CREATE TABLE fach (
     fach_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     CONSTRAINT uq_fach UNIQUE (name)
-) 
+);
 
 -- ========================
 -- Tabelle: schueler
@@ -37,7 +37,7 @@ CREATE TABLE schueler (
         REFERENCES klasse(klasse_id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
-) 
+);
 
 -- ========================
 -- Tabelle: klassenarbeit
@@ -63,7 +63,7 @@ CREATE TABLE klassenarbeit (
         REFERENCES klasse(klasse_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
-) 
+);
 
 -- ========================
 -- Tabelle: note
@@ -89,4 +89,4 @@ CREATE TABLE note (
         REFERENCES klassenarbeit(klassenarbeit_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
-)
+);

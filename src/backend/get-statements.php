@@ -15,8 +15,6 @@
     $lastname = (isset($_GET['nachname'])) ? htmlspecialchars($_GET['nachname']) : "";
     $bday = (isset($_GET['geb'])) ? htmlspecialchars($_GET['geb']) : "";
 
-    $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     switch($type) {
       case 'getClasses': {
         // Retrieve all classes and return as JSON
