@@ -17,11 +17,11 @@ require_once __DIR__ . '/../../new/layout/html_top.php';
             </div>
             <button type="submit">Erstellen</button>
             <br>
-            <button type="button" onclick="window.location.href='./Startseite.html'" style="margin-top: 2%;">Zurück</button>
+            <button type="button" onclick="window.location.href='./Startseite.php'" style="margin-top: 2%;">Zurück</button>
         </form>
     </div>
 
-    
+
 <?php
 require_once __DIR__ . '/../../new/layout/html_bottom.php';
 ?>

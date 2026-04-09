@@ -30,6 +30,8 @@ function postStatements() {
       break;
     }
 
+// von Tim eingefügt um was zu testen (funktioniert) :)
+
     case 'addClass': {
       $bezeichnung = isset($_POST['bezeichnung']) ? htmlspecialchars($_POST['bezeichnung']) : null;
       $schuljahr = isset($_POST['schuljahr']) ? htmlspecialchars($_POST['schuljahr']) : null;
@@ -50,6 +52,11 @@ function postStatements() {
       }
       break;
     }
+
+// von Tim eingefügt um was zu testen (funktioniert) :)
+
+
+
 
     case 'removeStudent': {
       // expects schueler_id in POST data

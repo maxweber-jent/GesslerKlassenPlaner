@@ -91,7 +91,7 @@ require_once __DIR__ . '/../backend/db.php';
         <button type="submit">Anzeigen</button>
     </form>
 
-    <!-- Daten-Anzeige -->
+    <!-- Daten-Anzeige (Temporär da cases noch nicht existieren) -->
     <?php
     if (isset($_GET['type'])) {
         $type = htmlspecialchars($_GET['type']);
@@ -304,10 +304,15 @@ require_once __DIR__ . '/../backend/db.php';
 <script>
 function toggleFields() {
     const type = document.getElementById('filter_type').value;
-    document.getElementById('class_field').style.display = (type === 'gradesPerClass') ? 'block' : 'none';
-    document.getElementById('student_field').style.display = (type === 'gradesPerStudent') ? 'block' : 'none';
-    document.getElementById('subject_field').style.display = (type === 'gradesPerSubject') ? 'block' : 'none';
-    document.getElementById('class_view_field').style.display = (type === 'gradesPerClass') ? 'block' : 'none';
+    const classField = document.getElementById('class_field');
+    const studentField = document.getElementById('student_field');
+    const subjectField = document.getElementById('subject_field');
+    const classViewField = document.getElementById('class_view_field');
+    
+    if (classField) classField.style.display = (type === 'gradesPerClass') ? 'block' : 'none';
+    if (studentField) studentField.style.display = (type === 'gradesPerStudent') ? 'block' : 'none';
+    if (subjectField) subjectField.style.display = (type === 'gradesPerSubject') ? 'block' : 'none';
+    if (classViewField) classViewField.style.display = (type === 'gradesPerClass') ? 'block' : 'none';
 }
 </script>
 
